@@ -7,6 +7,7 @@ spec:
     helm:
       extraValues: |
         nameOverride: "prod-helloworld"
+        fullNameOverride: "prod-helloworld"
         replicaCount: 3
         message: PROD, patch from extraValues
         service:
