@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helloworld
+spec:
+  source:
+    helm:
+      extraValues: |
+        replicaCount: 2
+        message: patch from extraValues
+        service:
+          port: 8080

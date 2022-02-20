@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helloworld
+spec:
+  source:
+    helm:
+      extraValues: |
+        nameOverride: "prod-helloworld"
+        replicaCount: 3
+        message: PROD, patch from extraValues
+        service:
+          type: LoadBalancer
+          port: 80

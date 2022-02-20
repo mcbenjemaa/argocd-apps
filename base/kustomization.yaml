@@ -1,0 +1,8 @@
+commonLabels:
+  app: argocd-apps
+
+resources:
+- hello-world.yaml
+
+crds:
+  - "./crds/argocd-application-crd.yaml"

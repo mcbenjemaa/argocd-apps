@@ -1,0 +1,8 @@
+nameSuffix: -dev
+commonLabels:
+  env: dev
+bases:
+- ../../base/
+
+patchesStrategicMerge:
+  - "patches/hello-world.yaml"

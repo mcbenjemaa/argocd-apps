@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helloworld
+spec:
+  project: default
+  source:
+    repoURL: "http://tech.paulcz.net/charts"
+    targetRevision: "2.0.0"
+    chart: helloworld
+    helm:
+      values: |
+        nameOverride: ""
+        replicaCount: 1
+        service:
+          type: ClusterIP
+          port: 80
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: "default"
