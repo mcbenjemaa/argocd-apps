@@ -11,5 +11,5 @@ spec:
         replicaCount: 3
         message: PROD, patch from extraValues
         service:
-          type: LoadBalancer
+          type: NodePort
           port: 80
