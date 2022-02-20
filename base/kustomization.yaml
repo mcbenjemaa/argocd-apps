@@ -5,4 +5,4 @@ resources:
 - hello-world.yaml
 
 crds:
-  - "./crds/argocd-application-crd.yaml"
+  - "./crds/application-openapi-spec.yaml"

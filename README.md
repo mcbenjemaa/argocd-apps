@@ -3,10 +3,15 @@
 This repo shows a brief demo about using kustomize to patch argocd apps with a new approach.
 
 
-### Install argocd
+#### Install argocd
 
 First, If you don't have argocd yet running, please proceed to install it.
 
+#### Update CRD
+
+```
+kubectl apply -f base/crds/application-crd.yaml
+```
 
 #### Update argocd image:
 
