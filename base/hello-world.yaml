@@ -9,7 +9,7 @@ spec:
     targetRevision: "2.0.0"
     chart: helloworld
     helm:
-      values: |
+      values:
         nameOverride: ""
         replicaCount: 1
         service:

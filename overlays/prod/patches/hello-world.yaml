@@ -5,11 +5,11 @@ metadata:
 spec:
   source:
     helm:
-      extraValues: |
+      values:
         nameOverride: "prod-helloworld"
         fullNameOverride: "prod-helloworld"
         replicaCount: 3
-        message: PROD, patch from extraValues
+        message: PROD, patch from values as raw
         service:
           type: NodePort
           port: 80

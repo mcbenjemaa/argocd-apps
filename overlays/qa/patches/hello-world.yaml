@@ -5,8 +5,8 @@ metadata:
 spec:
   source:
     helm:
-      values:
+      values: |
         replicaCount: 2
-        message: patch from values as raw
+        message: patch from values as string
         service:
           port: 8080

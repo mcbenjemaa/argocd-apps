@@ -15,13 +15,16 @@ kubectl apply -f base/crds/application-crd.yaml
 
 #### Update argocd image:
 
+Use image: `medchiheb/argocd:values-raw-alpha36`
+
+
 ```
 kubectl -n argocd patch deploy argocd-server -p 'spec:
     template:
       spec:
         containers:
          - name: argocd-server
-           image: medchiheb/argocd-extra-values:alpha
+           image: medchiheb/argocd:values-raw-alpha36
            imagePullPolicy: IfNotPresent'
 
 kubectl -n argocd patch deploy argocd-repo-server -p 'spec:
@@ -29,11 +32,11 @@ kubectl -n argocd patch deploy argocd-repo-server -p 'spec:
       spec:
         initContainers:
          - name: copyutil
-           image: medchiheb/argocd-extra-values:alpha
+           image: medchiheb/argocd:values-raw-alpha36
            imagePullPolicy: IfNotPresent
         containers:
          - name: argocd-repo-server
-           image: medchiheb/argocd-extra-values:alpha
+           image: medchiheb/argocd:values-raw-alpha36
            imagePullPolicy: IfNotPresent'
 
 kubectl -n argocd patch deploy argocd-dex-server -p 'spec:
@@ -41,11 +44,11 @@ kubectl -n argocd patch deploy argocd-dex-server -p 'spec:
       spec:
         initContainers:
          - name: copyutil
-           image: medchiheb/argocd-extra-values:alpha
+           image: medchiheb/argocd:values-raw-alpha36
            imagePullPolicy: IfNotPresent
         containers:
          - name: argocd-repo-server
-           image: medchiheb/argocd-extra-values:alpha
+           image: medchiheb/argocd:values-raw-alpha36
            imagePullPolicy: IfNotPresent'
 
 kubectl -n argocd patch sts argocd-application-controller -p 'spec:
@@ -53,7 +56,7 @@ kubectl -n argocd patch sts argocd-application-controller -p 'spec:
       spec:
         containers:
          - name: argocd-application-controller
-           image: medchiheb/argocd-extra-values:alpha
+           image: medchiheb/argocd:values-raw-alpha36
            imagePullPolicy: IfNotPresent'
 ```      
 
@@ -62,6 +65,7 @@ kubectl -n argocd patch sts argocd-application-controller -p 'spec:
 
 ```
 kubectl -n argocd apply -f overlays/dev/root.yaml
+kubectl -n argocd apply -f overlays/qa/root.yaml
 kubectl -n argocd apply -f overlays/prod/root.yaml
 ```
 

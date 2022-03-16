@@ -217,11 +217,6 @@ spec:
                       helm:
                         description: Helm holds helm specific options
                         properties:
-                          extraValues:
-                            description: ExtraValues specifies extra Helm values to
-                              be passed to helm template, typically that overrides
-                              Values
-                            type: string
                           fileParameters:
                             description: FileParameters are file parameters to the
                               helm template
@@ -284,37 +279,11 @@ spec:
                           values:
                             description: Values specifies Helm values to be passed
                               to helm template, typically defined as a block
-                            type: string
+                            x-kubernetes-preserve-unknown-fields: true
                           version:
                             description: Version is the Helm version to use for templating
                               (either "2" or "3")
                             type: string
-                        type: object
-                      ksonnet:
-                        description: Ksonnet holds ksonnet specific options
-                        properties:
-                          environment:
-                            description: Environment is a ksonnet application environment
-                              name
-                            type: string
-                          parameters:
-                            description: Parameters are a list of ksonnet component
-                              parameter override values
-                            items:
-                              description: KsonnetParameter is a ksonnet component
-                                parameter
-                              properties:
-                                component:
-                                  type: string
-                                name:
-                                  type: string
-                                value:
-                                  type: string
-                              required:
-                              - name
-                              - value
-                              type: object
-                            type: array
                         type: object
                       kustomize:
                         description: Kustomize holds kustomize specific options
@@ -596,10 +565,6 @@ spec:
                   helm:
                     description: Helm holds helm specific options
                     properties:
-                      extraValues:
-                        description: ExtraValues specifies extra Helm values to be
-                          passed to helm template, typically that overrides Values
-                        type: string
                       fileParameters:
                         description: FileParameters are file parameters to the helm
                           template
@@ -661,36 +626,11 @@ spec:
                       values:
                         description: Values specifies Helm values to be passed to
                           helm template, typically defined as a block
-                        type: string
+                        x-kubernetes-preserve-unknown-fields: true
                       version:
                         description: Version is the Helm version to use for templating
                           (either "2" or "3")
                         type: string
-                    type: object
-                  ksonnet:
-                    description: Ksonnet holds ksonnet specific options
-                    properties:
-                      environment:
-                        description: Environment is a ksonnet application environment
-                          name
-                        type: string
-                      parameters:
-                        description: Parameters are a list of ksonnet component parameter
-                          override values
-                        items:
-                          description: KsonnetParameter is a ksonnet component parameter
-                          properties:
-                            component:
-                              type: string
-                            name:
-                              type: string
-                            value:
-                              type: string
-                          required:
-                          - name
-                          - value
-                          type: object
-                        type: array
                     type: object
                   kustomize:
                     description: Kustomize holds kustomize specific options
@@ -977,11 +917,6 @@ spec:
                         helm:
                           description: Helm holds helm specific options
                           properties:
-                            extraValues:
-                              description: ExtraValues specifies extra Helm values
-                                to be passed to helm template, typically that overrides
-                                Values
-                              type: string
                             fileParameters:
                               description: FileParameters are file parameters to the
                                 helm template
@@ -1045,37 +980,11 @@ spec:
                             values:
                               description: Values specifies Helm values to be passed
                                 to helm template, typically defined as a block
-                              type: string
+                              x-kubernetes-preserve-unknown-fields: true
                             version:
                               description: Version is the Helm version to use for
                                 templating (either "2" or "3")
                               type: string
-                          type: object
-                        ksonnet:
-                          description: Ksonnet holds ksonnet specific options
-                          properties:
-                            environment:
-                              description: Environment is a ksonnet application environment
-                                name
-                              type: string
-                            parameters:
-                              description: Parameters are a list of ksonnet component
-                                parameter override values
-                              items:
-                                description: KsonnetParameter is a ksonnet component
-                                  parameter
-                                properties:
-                                  component:
-                                    type: string
-                                  name:
-                                    type: string
-                                  value:
-                                    type: string
-                                required:
-                                - name
-                                - value
-                                type: object
-                              type: array
                           type: object
                         kustomize:
                           description: Kustomize holds kustomize specific options
@@ -1372,11 +1281,6 @@ spec:
                               helm:
                                 description: Helm holds helm specific options
                                 properties:
-                                  extraValues:
-                                    description: ExtraValues specifies extra Helm
-                                      values to be passed to helm template, typically
-                                      that overrides Values
-                                    type: string
                                   fileParameters:
                                     description: FileParameters are file parameters
                                       to the helm template
@@ -1447,37 +1351,11 @@ spec:
                                     description: Values specifies Helm values to be
                                       passed to helm template, typically defined as
                                       a block
-                                    type: string
+                                    x-kubernetes-preserve-unknown-fields: true
                                   version:
                                     description: Version is the Helm version to use
                                       for templating (either "2" or "3")
                                     type: string
-                                type: object
-                              ksonnet:
-                                description: Ksonnet holds ksonnet specific options
-                                properties:
-                                  environment:
-                                    description: Environment is a ksonnet application
-                                      environment name
-                                    type: string
-                                  parameters:
-                                    description: Parameters are a list of ksonnet
-                                      component parameter override values
-                                    items:
-                                      description: KsonnetParameter is a ksonnet component
-                                        parameter
-                                      properties:
-                                        component:
-                                          type: string
-                                        name:
-                                          type: string
-                                        value:
-                                          type: string
-                                      required:
-                                      - name
-                                      - value
-                                      type: object
-                                    type: array
                                 type: object
                               kustomize:
                                 description: Kustomize holds kustomize specific options
@@ -1753,11 +1631,6 @@ spec:
                           helm:
                             description: Helm holds helm specific options
                             properties:
-                              extraValues:
-                                description: ExtraValues specifies extra Helm values
-                                  to be passed to helm template, typically that overrides
-                                  Values
-                                type: string
                               fileParameters:
                                 description: FileParameters are file parameters to
                                   the helm template
@@ -1823,37 +1696,11 @@ spec:
                               values:
                                 description: Values specifies Helm values to be passed
                                   to helm template, typically defined as a block
-                                type: string
+                                x-kubernetes-preserve-unknown-fields: true
                               version:
                                 description: Version is the Helm version to use for
                                   templating (either "2" or "3")
                                 type: string
-                            type: object
-                          ksonnet:
-                            description: Ksonnet holds ksonnet specific options
-                            properties:
-                              environment:
-                                description: Environment is a ksonnet application
-                                  environment name
-                                type: string
-                              parameters:
-                                description: Parameters are a list of ksonnet component
-                                  parameter override values
-                                items:
-                                  description: KsonnetParameter is a ksonnet component
-                                    parameter
-                                  properties:
-                                    component:
-                                      type: string
-                                    name:
-                                      type: string
-                                    value:
-                                      type: string
-                                  required:
-                                  - name
-                                  - value
-                                  type: object
-                                type: array
                             type: object
                           kustomize:
                             description: Kustomize holds kustomize specific options
@@ -2118,11 +1965,6 @@ spec:
                           helm:
                             description: Helm holds helm specific options
                             properties:
-                              extraValues:
-                                description: ExtraValues specifies extra Helm values
-                                  to be passed to helm template, typically that overrides
-                                  Values
-                                type: string
                               fileParameters:
                                 description: FileParameters are file parameters to
                                   the helm template
@@ -2188,37 +2030,11 @@ spec:
                               values:
                                 description: Values specifies Helm values to be passed
                                   to helm template, typically defined as a block
-                                type: string
+                                x-kubernetes-preserve-unknown-fields: true
                               version:
                                 description: Version is the Helm version to use for
                                   templating (either "2" or "3")
                                 type: string
-                            type: object
-                          ksonnet:
-                            description: Ksonnet holds ksonnet specific options
-                            properties:
-                              environment:
-                                description: Environment is a ksonnet application
-                                  environment name
-                                type: string
-                              parameters:
-                                description: Parameters are a list of ksonnet component
-                                  parameter override values
-                                items:
-                                  description: KsonnetParameter is a ksonnet component
-                                    parameter
-                                  properties:
-                                    component:
-                                      type: string
-                                    name:
-                                      type: string
-                                    value:
-                                      type: string
-                                  required:
-                                  - name
-                                  - value
-                                  type: object
-                                type: array
                             type: object
                           kustomize:
                             description: Kustomize holds kustomize specific options
